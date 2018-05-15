@@ -1,0 +1,88 @@
+<head>  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<div>
+<div class="container">
+   <ul class="nav nav-pills">
+      <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+      <li><a data-toggle="pill" href="#skill">Skill</a></li>
+      
+      <li><a data-toggle="pill" href="#placement">Placement</a></li>
+      <li><a data-toggle="pill" href="#certification">Certification</a></li>
+    </ul>
+    
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+        <p>Add your details</p>
+      </div>
+      <div id="skill" class="tab-pane fade">
+        <h3>Add Skill</h3>
+
+        
+            <label for="skillType">skillType</label>
+            <input [(ngModel)]="skill.skillType" type="text" name="skillType" required>
+            <br>
+         
+            <label for="yearsOfExperience">Years Of Experience</label>
+            <input [(ngModel)]="skill.yearsOfExperience" type="text" name="yearsOfExperience" required>
+            <br>
+         
+            <label for="lastWorked">lastWorked</label>
+           <input [(ngModel)]="skill.lastWorked" type="text" name="lastWorked" required>
+            <br>
+         
+            <label for="version">version</label>
+        
+            <input [(ngModel)]="skill.version" type="text" name="version" required>
+            <br>
+                <div class="clearfix">
+                  <br>     
+                   <button type="submit" class="btn btn-primary" (click)="addSkill()"><h3>Add Skill</h3></button>
+                 </div>
+
+
+        </div>
+      <div id="placement" class="tab-pane fade">
+        <h3>Add Placement</h3>
+       
+        <label for="studentPlaced">No Of Students Placed</label>
+     
+        <input [(ngModel)]="placement.noOfStudentsPlaced" type="text" name="noOfStudentsPlaced" required>
+        <br>
+      
+        <label for="placementOrganisation">
+          <b>Placement Organisation</b>
+        </label>
+     
+        <input [(ngModel)]="placement.placementOrganisation" type="text" placeholder="Enter placementOrganisation" name="placementOrganisation" required>
+        <br>
+        <div class="clearfix">
+          <br>     
+           <button type="submit" class="btn btn-primary" (click)="addPlacement()"><h3>Add Placement</h3></button>
+         </div>
+      </div>
+
+
+
+      <div id="certification" class="tab-pane fade">
+        <h3>Add Certifications</h3>
+        <label for="certificate Name">certificate Name</label>
+     
+        <input [(ngModel)]="certification.certificateName" type="text" name="certificate Name" required>
+        <br>  
+          <label for="Vendor Name">certificate Name</label>
+           <input [(ngModel)]="certification.vendorName" type="text" name="Vendor Name" required>
+          <br>
+       
+            <label for="year Of Passing">year Of Passing</label>
+          
+            <input [(ngModel)]="certification.yearOfPassing" type="text" name="Year Of Passing" required>
+            <br>
+         
+            <div class="clearfix">
+            <br>     
+             <button type="submit" class="btn btn-primary" (click)="addCertification()"><h3>Add Certification</h3></button>
+           </div>
+
+      </div>
+    </div>
+  </div>

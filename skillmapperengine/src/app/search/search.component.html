@@ -1,0 +1,19 @@
+<div>
+  
+  <input #skill (keydown.,)="searchBySkill(skill.value); skill.value=''" (keyup)="onKey(skill.value)" />
+<!-- (click) passes input value to add() and then clears the input -->
+<button (click)="searchBySkill(skill.value)">
+  Search
+</button>
+<br>
+
+<button type="button" class="btn btn-primary"><b>{{skillValue}}</b></button>
+ <br>
+<div *ngFor="let profile of profiles">
+    {{profile.user.firstName}}
+    {{profile.user.lastName}}   
+    {{profile.user.employeeID}}
+    {{profile.user.emailID}}
+
+    <button (click)="getProfileByID(profile.profileID)">View Profile</button>
+  </div>

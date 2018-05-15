@@ -1,0 +1,77 @@
+
+<table>
+  <tr>
+    <td>
+<form name="resume" id="resume" action="" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Create your Resume</h1>
+      <hr>
+     
+      <label for="username"><b>Name</b></label>
+      <input  [(ngModel)]="resume.username" type="text" placeholder="Enter Name" name="username" required>
+  
+      <label for="Job Profile"><b>Job Profile</b></label>
+      <input [(ngModel)]="resume.jobprofile" type="text" placeholder="Enter job profile" name="jobprofile" required>
+  
+      <label for="email"><b>Email</b></label>
+      <input [(ngModel)]="resume.emailID" type="text" placeholder="Enter Email" name="email" required>
+     
+      <label for="Key Skills"><b>Key Skill</b></label>
+      <input [(ngModel)]="resume.keyskill" type="text" placeholder="Enter Key skills" name="key skills" required>
+  
+      <div class="clearfix">
+          <button type="submit" class="signupbtn" (click)="clear()">Clear</button>
+      </div>
+     </div>
+  </form>
+  </td>
+
+  <td width="50%">
+      <div id="print-section">
+      <form name="resumepreview" id="resumepreview" action="" style="border:1px solid #ccc">
+          <div class="container">
+            <h1>Resume</h1>
+            <hr>
+            
+            <label for="username"><b>Name</b></label><br>
+            <div class="alert alert-success">
+
+            <label>{{resume.username}}</label><br>
+            </div>
+
+            <label for="Job Profile"><b>Job Profile</b></label><br>
+            <div class="alert alert-success">
+
+          <label>{{resume.jobprofile}}</label><br>
+          </div>
+
+            <label for="email"><b>Email</b></label><br>
+            <div class="alert alert-success">
+
+            <label>{{resume.emailID}}</label><br>
+           </div>
+            <label for="Key Skills"><b>Key Skill</b></label><br>
+            <div class="alert alert-success">
+
+            <label>{{resume.keyskill}} </label><br>
+                </div>
+            
+                <br>
+          </div>
+        </form>
+     </div>
+     <div class="clearfix">
+        <button type="submit" class="signupbtn" (click)="print()">Print</button>
+      </div>
+  </td>
+  </tr>
+  <tr colspan=2>
+    <td>
+      <div class="clearfix">
+          
+          <button type="button" class="cancelbtn" (click)="cancel()">Cancel</button>
+          <button type="submit" class="signupbtn" (click)="save()">Save</button>
+        </div>
+  </td>
+      </tr>
+  </table>

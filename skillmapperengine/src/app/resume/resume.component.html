@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
+<table>
+  <tr>
+    <td>
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+            <img src="./assets/images/avatar_hat.jpg" style="width:100%">
+       </div>
+        <div class="w3-container">
+            <p>
+               <label for="username"><b>Name</b></label>
+               <input  [(ngModel)]="resume.username" type="text" placeholder="Enter Name" name="username" required>
+            </p>
+
+          
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+            <label for="designation"><b>Designation</b></label>
+            <input  [(ngModel)]="resume.designation" type="text" placeholder="Enter designation" name="designation" required>
+         
+          </p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
+            <label for="address"><b>Address</b></label>
+            <input  [(ngModel)]="resume.street" type="text" placeholder="Enter street name" name="street name" required>
+            <input  [(ngModel)]="resume.city" type="text" placeholder="Enter City" name="street name" required>
+            <input  [(ngModel)]="resume.state" type="text" placeholder="Enter state" name="state" required>
+            <input  [(ngModel)]="resume.pin" type="text" placeholder="Enter Zipcode" name="pin" required>
+
+          </p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>
+            <label for="email"><b>Email ID</b></label>
+            <input  [(ngModel)]="resume.emailID" type="text" placeholder="Enter email ID" name="emailID" required>
+                      </p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>
+            <label for="phone"><b>Phone No.</b></label>
+            <input  [(ngModel)]="resume.phone" type="text" placeholder="Enter phone no." name="Phone no." required>
+          </p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <p>
+              <input [(ngModel)]="resume.skills" type="text" placeholder="Enter your skill" name="skills" required>
+          </p>
+          
+          
+          <hr>
+          
+              <p class="w3-large"><b><i class="fa fa-git-square fa-fw w3-margin-right w3-text-teal"></i>Projects</b>
+            <input  [(ngModel)]="resume.projects" type="text" placeholder="Enter projects" name="projects" required>
+          
+          </p>
+           <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p><input  [(ngModel)]="resume.languages" type="text" placeholder="Enter languages known" name="languages" required>
+          </p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+          </div>
+        <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+  
+
+   
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+        
+        
+        <div>
+          <label for="organisation"><b>Organization</b></label>
+          <input #organization type="text"/>
+
+          <label for="jobdescription"><b>Job Description</b></label>
+          <input #jobdescription type="text"/>
+          
+          <label for="designation"><b>Desination</b></label>
+          <input #designation type="text"/>
+
+          <label for="startDate"><b>Start Date</b></label>
+          <input #startDate type="text"/>
+
+          <label for="endDate"><b>End Date</b></label>
+          <input #endDate type="text"/>
+
+
+          <!-- (click) passes input value to add() and then clears the input -->
+          <button type="button" class="btn btn-success" 
+          (click)="add(organization.value,jobdescription.value,designation.value,startDate.value,endDate.value); ">
+
+          ADD
+          </button>
+            
+          </div>   
+
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+          <p>Web Development! All I need to know in one place</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>London Business School</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+          <p>Master Degree</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>School of Coding</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+          <p>Bachelor Degree</p><br>
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+</td>
+
+
+<td width="50%">
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+        <!-- The Grid -->
+        <div class="w3-row-padding">
+        
+          <!-- Left Column -->
+          
+            <div class="w3-white w3-text-grey w3-card-4">
+              <div class="w3-display-container">
+                  <img src="./assets/images/avatar_hat.jpg" style="width:100%">
+                <div class="w3-display-bottomleft w3-container w3-text-black">
+                  <h2>Jane Doe</h2>
+                </div>
+              </div>
+              <div class="w3-container">
+                <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                  Designer
+                </p>
+                <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                  London, UK
+                </p>
+                <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                  ex@mail.com
+                </p>
+                <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                  1224435534
+                </p>
+                <hr>
+                      <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+                <p>Adobe Photoshop</p>
+                <div class="w3-light-grey w3-round-xlarge w3-small">
+                  <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+                </div>
+                <p>Photography</p>
+                <div class="w3-light-grey w3-round-xlarge w3-small">
+                  <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+                    <div class="w3-center w3-text-white">80%</div>
+                  </div>
+                </div>
+                <p>Illustrator</p>
+                <div class="w3-light-grey w3-round-xlarge w3-small">
+                  <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+                </div>
+                <p>Media</p>
+                <div class="w3-light-grey w3-round-xlarge w3-small">
+                  <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+                </div>
+                <br>
+      
+                <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+                <p>English</p>
+                <div class="w3-light-grey w3-round-xlarge">
+                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+                </div>
+                <p>Spanish</p>
+                <div class="w3-light-grey w3-round-xlarge">
+                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+                </div>
+                <p>German</p>
+                <div class="w3-light-grey w3-round-xlarge">
+                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
+                </div>
+                <br>
+              </div>
+            </div><br>
+      
+          <!-- End Left Column -->
+        
+      
+         
+          
+            <div class="w3-container w3-card w3-white w3-margin-bottom">
+              <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+              <div class="w3-container">
+                  <div *ngFor='let experience of resume.workexperience'> 
+                      <div *ngIf="experience.organization!=null">
+                          <label><b>Organisation</b></label>
+                          <label>{{experience.organization}}</label><br>
+                          <label><b>Designation</b></label>
+                          <label>{{experience.designation}}</label><br>
+                          <label><b>job description</b></label>
+                          <label>{{experience.jobdescription}}</label><br>
+                          <label><b>Start Date</b></label>
+                          <label>{{experience.startDate}}</label><br>
+                          <label><b>End Date</b></label>
+                          <label>{{experience.endDate}}</label><br>
+                          <button class="remove" title="remove experience"
+                          (click)="remove(experience)" type="button" class="btn btn-success" >x</button>
+                      </div>
+                   </div>         
+                <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
+                <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+                <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+                <hr>
+              </div>
+              <div class="w3-container">
+                <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
+                <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+                <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+                <hr>
+              </div>
+              <div class="w3-container">
+                <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
+                <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+              </div>
+            </div>
+      
+            <div class="w3-container w3-card w3-white">
+              <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+              <div class="w3-container">
+                <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+                <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+                <p>Web Development! All I need to know in one place</p>
+                <hr>
+              </div>
+              <div class="w3-container">
+                <h5 class="w3-opacity"><b>London Business School</b></h5>
+                <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+                <p>Master Degree</p>
+                <hr>
+              </div>
+              <div class="w3-container">
+                <h5 class="w3-opacity"><b>School of Coding</b></h5>
+                <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+                <p>Bachelor Degree</p><br>
+              </div>
+            </div>
+      
+          <!-- End Right Column -->
+          
+        <!-- End Grid -->
+        </div>
+        
+        <!-- End Page Container -->
+      </div></td>
+
+</tr>
+</table>
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+
+
+</body>
+</html>

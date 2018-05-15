@@ -1,0 +1,31 @@
+ listuser works!
+<table class="users" border=1>
+  <tr>
+  <td>First Name</td>
+  <td>Last Name</td>
+  <td>Employee ID</td>
+  <td>Email ID</td>
+  <td>Region Code</td>
+  <td>Role</td>
+
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>
+      {{user.firstName}}
+    </td>
+    <td>
+      {{user.lastName}}
+    </td>
+    <td>
+      {{user.employeeID}}
+    </td>
+    <td>
+      {{user.emailID}}
+    </td>
+    <td>
+      {{user.regionCode}}
+     </td><td>
+        {{user.role}}
+       </td>
+  </tr>
+  </table>

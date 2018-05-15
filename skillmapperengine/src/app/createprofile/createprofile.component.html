@@ -1,0 +1,284 @@
+<form style="border:1px solid #ccc">
+  <div class="container">
+
+    <table>
+      <h1>Create Profile</h1>
+      <hr>
+      <tr>
+        <td>
+          <label for="profileID"></label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.profileID" type="hidden" name="profileID" required>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="qualification">
+            <b>Qualification</b>
+          </label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.qualification" type="text" placeholder="Enter qualification" name="qualification" required>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="centre">
+            <b>Centre</b>
+          </label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.centre" type="text" placeholder="Enter centre" name="centre" required>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="designation">
+            <b>Designation</b>
+          </label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.designation" type="text" placeholder="Enter designation" name="designation" required>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>
+          <label for="DateOfJoining">
+            <b>Date Of Joining</b>
+          </label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.DateOfJoining" type="text" placeholder="Enter Date Of Joining" name="DateOfJoining" required>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>
+          <label for="ratings">
+            <b>Ratings</b>
+          </label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.ratings" type="text" placeholder="Enter ratings" name="ratings" required>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>
+          <label for=" experience">
+            <b> experience(months)</b>
+          </label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.experience" type="text" placeholder="Enter  experience" name=" experience" required>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>
+          <label for=" studentsTrained">
+            <b>Students Trained</b>
+          </label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.studentsTrained" type="text" placeholder="Enter  studentsTrained" name="studentsTrained"
+            required>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>
+          <label for="Hours Of Training">
+            <b>Hours Of Trainingv</b>
+          </label>
+        </td>
+        <td>
+          <input [(ngModel)]="profile.hoursOfTraining" type="text" placeholder="Enter  hours Of training" name="hoursOfTraining"
+            required>
+        </td>
+      </tr>
+      <br>
+      
+    </table>
+    <hr>
+
+
+
+    <h1>
+      Skills
+    </h1>
+   <ng-container *ngIf="profile.skills">
+    <table>
+        <div *ngFor="let skill of profile.skills">
+            <tr>
+        <td>
+          <label for="skillType">skillType</label>
+        </td>
+        <td>
+          <input [(ngModel)]="skill.skillType" type="text" name="skillType" required>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="yearsOfExperience">Years Of Experience</label>
+        </td>
+        <td>
+          <input [(ngModel)]="skill.yearsOfExperience" type="text" name="yearsOfExperience" required>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="lastWorked">lastWorked</label>
+        </td>
+        <td>
+          <input [(ngModel)]="skill.lastWorked" type="text" name="lastWorked" required>
+          <br>
+        </td>
+      </tr>
+      <tr>
+          <td>
+            <label for="version">version</label>
+          </td>
+          <td>
+            <input [(ngModel)]="skill.version" type="text" name="version" required>
+            <br>
+          </td>
+        </tr>
+
+        <br>
+      </div>
+    </table>
+
+
+
+</ng-container>
+
+    <ng-container >
+        <a class="menu" routerLink="updateprofile/{{profile.user.emailID}}"><button type="button" >Add Skills</button></a><br>
+      </ng-container>   
+    <hr>
+
+
+
+     <h1>
+Certifications
+    </h1>
+        
+    <ng-container *ngIf="profile.certifications">
+
+    <table div *ngFor="let certification of profile.certifications">
+        
+        
+       
+<tr>
+    <td>
+      <label for="certificate Name">certificate Name</label>
+    </td>
+    <td>
+      <input [(ngModel)]="certification.certificateName" type="text" name="certificate Name" required>
+      <br>
+    </td>
+  </tr>
+
+  <tr>
+      <td>
+        <label for="Vendor Name">certificate Name</label>
+      </td>
+      <td>
+        <input [(ngModel)]="certification.vendorName" type="text" name="Vendor Name" required>
+        <br>
+      </td>
+    </tr>
+    <tr>
+        <td>
+          <label for="year Of Passing">year Of Passing</label>
+        </td>
+        <td>
+          <input [(ngModel)]="certification.yearOfPassing" type="text" name="Year Of Passing" required>
+          <br>
+        </td>
+      </tr>
+      <br>
+        </table>
+        </ng-container>
+        <ng-container >
+            <a class="menu" routerLink="updateprofile/{{profile.user.emailID}}"><button type="button" >Add Cerifications</button></a><br>
+          </ng-container>   
+        
+    
+        
+
+
+
+ 
+
+
+
+<br>
+<hr>
+
+<h1>Placement</h1>
+<ng-container *ngIf="profile.placement">
+
+    <table>
+        
+        <tr>
+          <td>
+            <label for="studentPlaced">No Of Students Placed</label>
+          </td>
+          <td>
+            <input [(ngModel)]="profile.placement.noOfStudentsPlaced" type="text" name="noOfStudentsPlaced" required>
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="placementOrganisation">
+              <b>Placement Organisation</b>
+            </label>
+          </td>
+          <td>
+            <input [(ngModel)]="profile.placement.placementOrganisation" type="text" placeholder="Enter placementOrganisation" name="placementOrganisation" required>
+            <br>
+          </td>
+        </tr>
+
+</table>
+</ng-container>
+<ng-container >
+    <a class="menu" routerLink="updateprofile/{{profile.user.emailID}}"><button type="button" >Add Placement Details</button></a><br>
+  </ng-container> 
+    <div class="clearfix">
+     <br>     
+      <button type="submit" class="btn btn-primary" (click)="update()"><h3>Update Profile</h3></button>
+    </div>
+ </div> 
+</form>
+
+<div *ngFor="let skill of profile.skills">
+    <ul class="fa-ul mb-0">
+      <li>
+        <i class="fa-li fa fa-check"></i>
+        {{skill.skillType}}</li>
+      <li>
+        Version:
+        <i class="fa-li fa fa-check"></i>
+        {{skill.version}} </li>
+      <li>
+        Years of Experience
+        <i class="fa-li fa fa-check"></i>
+        {{skill.yearsOfExperience}}</li>
+      <li>
+        Last worked
+        <i class="fa-li fa fa-check"></i>
+        {{skill.lastWorked}} </li>
+        <hr>
+    </ul>
+  </div>

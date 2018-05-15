@@ -1,0 +1,82 @@
+<div class="sidenav" *ngIf="user" >
+  
+  <a class="menu" routerLink="uploadImage">Upload Image</a><br>
+
+         
+    <ng-container *ngIf="user.role=='EMPLOYEE'" >
+      <a class="menu" routerLink="viewprofile/{{user.emailID}}">View Profile</a>
+    </ng-container><br>
+  
+    <ng-container *ngIf="user.role=='EMPLOYEE'" >
+      <a class="menu" routerLink="createprofile/{{user.emailID}}">Update Profile</a>
+    </ng-container><br>
+  
+      <ng-container *ngIf="user.role=='EMPLOYEE'" >
+        <a class="menu" routerLink="updateprofile/{{user.emailID}}">Add Profile Details</a><br>
+      </ng-container>
+  
+      <ng-container *ngIf="user.role=='EMPLOYEE'" >
+          <a class="menu" routerLink="/resume">Resume</a><br>
+      </ng-container>
+  
+      <ng-container *ngIf="user.role=='HR'" >
+        <a class="menu" routerLink="approve">Approve Profile</a><br>
+      </ng-container>
+  
+     <ng-container *ngIf="user.role=='HR'" >
+          <a class="menu" routerLink="/listuser">List User</a><br>
+      </ng-container>  
+  </div>
+<div class="main">
+    <div *ngIf="user">  
+   
+       <router-outlet></router-outlet>
+   
+       
+       
+       <h2 style="text-align:center">My Card</h2>
+   
+       <div id="card" class="card">
+          <div *ngIf="user.imageName!=null">
+          <img [src]="user.profilepic"
+          alt="Profile Image" *ngIf="!isImageLoading; else noImageFound" class="media-object img-rounded"  style="width:100%;height:200px">
+          </div>
+          <div *ngIf="user.imageName===null">
+              <img src="../assets/images/noimage.png" class="media-object img-rounded"  style="width:100%;height:200px">
+          </div>
+          <h1>{{user.firstName}}  {{user.lastName}}</h1>
+         <p class="title">{{user.employeeID}}</p>
+         <p>{{user.IBU}}</p>
+         <p>{{user.regionCode}}</p>
+         
+         <div style="margin: 24px 0;">
+           <a href="#"><i class="fa fa-linkedin"></i></a>  
+           <a href="#"><i class="fa fa-git-square"></i></a> 
+        </div>
+        <p><button>Profile</button></p>
+       </div>
+      </div>
+  </div>
+
+
+    <!-- <nav>
+        <div *ngIf="user.role=='EMPLOYEE'">
+            <a routerLink="/updateprofile">Update Profile</a>
+          </div>
+          <div *ngIf="user.role=='EMPLOYER'">
+            <a routerLink="/search">Search</a>
+      
+          </div>
+          <div *ngIf="user.role=='HR'">
+              <a routerLink="/listuser">List User</a>
+              <a routerLink="approve">Approve Profile</a>
+          </div>
+          </nav>
+       -->
+         
+
+    
+
+
+
+

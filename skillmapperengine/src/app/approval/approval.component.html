@@ -1,0 +1,40 @@
+ approval works!
+<div *ngFor="">
+
+      {{profile.user.firstName}}
+
+  </div>
+<table class="users" border=1>
+  <tr>
+  <td>First Name</td>
+  <td>Last Name</td>
+  <td>Employee ID</td>
+  <td>Email ID</td>
+  <td>Region Code</td>
+  <td>Action</td>
+  </tr>
+  <tr *ngFor="let profile of profiles">
+    <ng-container *ngIf="profile.user.role == 'EMPLOYEE'" >
+
+    <td>
+      {{profile.user.firstName}}
+    </td>
+    <td>
+      {{profile.user.lastName}}
+    </td>
+    <td>
+      {{profile.user.employeeID}}
+    </td>
+    <td>
+      {{profile.user.emailID}}
+    </td>
+    <td>
+      {{profile.user.regionCode}}
+     </td>
+     <td>
+      <button title="approve profile"
+    (click)="approve(profile)">Approve</button>
+    <td>
+    </ng-container>
+    </tr>
+  </table>
